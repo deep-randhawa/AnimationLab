@@ -13,7 +13,7 @@ class CanvasViewController: UIViewController {
     @IBOutlet weak var arrow: UIImageView!
     @IBAction func didPanTray(_ sender: UIPanGestureRecognizer) {
         let senderTranslation = sender.translation(in: view)
-        var senderSpeed = sender.velocity(in: view)
+        let senderSpeed = sender.velocity(in: view)
             
         //Conditional state check
         if sender.state == .began {
@@ -52,7 +52,7 @@ class CanvasViewController: UIViewController {
     
     @IBAction func didPanFace(_ sender: UIPanGestureRecognizer) {
         let senderTranslation = sender.translation(in: view)
-        var senderImageView = sender.view as! UIImageView
+        let senderImageView = sender.view as! UIImageView
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(pantan(sender:)))
         
         if sender.state == .began {
